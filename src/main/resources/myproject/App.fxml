@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myproject.KjoeleskapController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Matvarer">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane prefHeight="259.0" prefWidth="600.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="matvareTable" prefHeight="258.0" prefWidth="600.0">
+                                      <columns>
+                                        <TableColumn prefWidth="253.60000306367874" text="Navn på matvare" />
+                                        <TableColumn prefWidth="244.8000030517578" text="Kategori" />
+                                          <TableColumn prefWidth="102.39996337890625" text="Antall" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <TextField fx:id="matvareTextField" layoutX="14.0" layoutY="268.0" prefHeight="26.0" prefWidth="148.0" promptText="Navn på matvare" />
+                        <ChoiceBox fx:id="kategoriChoiceBox" layoutX="172.0" layoutY="268.0" prefWidth="150.0" />
+                        <Spinner fx:id="antallSpinner" layoutX="329.0" layoutY="268.0" prefHeight="26.0" prefWidth="80.0" />
+                        <Button layoutX="429.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleAddMatvare" text="Legg til" />
+                        <ButtonBar layoutX="288.0" layoutY="317.0" prefHeight="40.0" prefWidth="288.0">
+                          <buttons>
+                              <Button mnemonicParsing="false" onAction="#handleLagreKjoeleskap" text="Legg til i kjøleskapet" />
+                            <Button mnemonicParsing="false" onAction="#handleOpenKjoeleskap" text="Last inn kjøleskapet" />
+                          </buttons>
+                        </ButtonBar>
+                        <Button layoutX="491.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleRemoveMatvare" text="Fjerne matvare" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Kjøleskap">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="statisticsTextArea" prefHeight="260.0" prefWidth="600.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
